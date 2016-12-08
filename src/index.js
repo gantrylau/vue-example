@@ -33,19 +33,24 @@ const router = new VueRouter({
 // 4. 创建和挂载根实例。
 // 记得要通过 router 配置参数注入路由，
 // 从而让整个应用都有路由功能
-// const app = new Vue({
-//     // router,
-//     template: '<div></div>'
-// }).$mount('#app');
-
-new Vue({
-    el      : '#app',
+const app = new Vue({
+    router  : router,
     template: `<div><h1>Hello App!</h1>
     <p>
 <router-link to="/foo">Go to Foo</router-link>
 <router-link to="/bar">Go to Bar</router-link>
 </p>
 <router-view></router-view></div>`
-});
+}).$mount('#app');
+
+// new Vue({
+//     el      : '#app',
+//     template: `<div><h1>Hello App!</h1>
+//     <p>
+// <router-link to="/foo">Go to Foo</router-link>
+// <router-link to="/bar">Go to Bar</router-link>
+// </p>
+// <router-view></router-view></div>`
+// });
 
 // 现在，应用已经启动了！

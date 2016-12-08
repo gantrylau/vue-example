@@ -21,9 +21,10 @@ module.exports = {
     resolve  : {
         extensions: ['', '.js', '.vue'],
         alias     : {
-            'vue' : path.resolve(rootPath, 'node_modules/vue/dist/vue.js'),
-            'nm:' : path.resolve(rootPath, 'node_modules'),
-            'src:': srcPath
+            'vue'       : path.resolve(rootPath, 'node_modules/vue/dist/vue.min.js'),
+            'vue-router': path.resolve(rootPath, 'node_modules/vue-router/dist/vue-router.min.js'),
+            'nm:'       : path.resolve(rootPath, 'node_modules'),
+            'src:'      : srcPath
         }
     },
     externals: {},
@@ -37,7 +38,7 @@ module.exports = {
         //     context: __dirname,
         // }),
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        // new webpack.optimize.CommonsChunkPlugin('vendor', 'js/vendor.bundle.js', 'Infinity'),
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'js/vendor.bundle.js'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),

@@ -10,7 +10,8 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = merge(baseConfig, {
     entry : {
-        app  : [path.resolve(baseConfig.rootPath, 'src/index.js'), hotMiddlewareScript]
+        vendor: ['vue', 'vue-router'],
+        app   : [path.resolve(baseConfig.rootPath, 'src/index.js'), hotMiddlewareScript]
     },
     output: {
         publicPath: publicPath,

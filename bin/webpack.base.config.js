@@ -21,6 +21,7 @@ module.exports = {
     resolve  : {
         extensions: ['', '.js', '.vue'],
         alias     : {
+            'vue' : path.resolve(rootPath, 'node_modules/vue/dist/vue.js'),
             'nm:' : path.resolve(rootPath, 'node_modules'),
             'src:': srcPath
         }

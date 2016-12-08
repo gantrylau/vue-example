@@ -5,13 +5,13 @@ Vue.use(VueRouter);
 
 Vue.config.debug = true;//开启错误提示
 
-
 // 0. 如果使用模块化机制编程，導入Vue和VueRouter，要调用 vue.use(vuerouter)
 
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
-const Foo = {template: '<div>foo</div>'};
-const Bar = {template: '<div>bar</div>'};
+const Foo  = {template: '<div>foo</div>'};
+const Bar  = {template: '<div>bar</div>'};
+const Home = resolve => require(['./components/home'], resolve);
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -20,7 +20,8 @@ const Bar = {template: '<div>bar</div>'};
 // 我们晚点再讨论嵌套路由。
 const routes = [
     {path: '/foo', component: Foo},
-    {path: '/bar', component: Bar}
+    {path: '/bar', component: Bar},
+    {path: '/home', component: Home}
 ];
 
 // 3. 创建 router 实例，然后传 `routes` 配置
@@ -39,6 +40,7 @@ const app = new Vue({
     <p>
 <router-link to="/foo">Go to Foo</router-link>
 <router-link to="/bar">Go to Bar</router-link>
+<router-link to="/home">Go to Home</router-link>
 </p>
 <router-view></router-view></div>`
 }).$mount('#app');
